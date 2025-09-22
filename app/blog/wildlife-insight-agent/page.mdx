@@ -1,0 +1,102 @@
+export const metadata = {
+  title: 'Wildlife Insight Agent: AI-Powered Conservation Research for Everyone',
+  description:
+    'Discover how multi-agent AI is revolutionizing wildlife conservation. My latest project uses CrewAI, Gemini LLM, and GBIF data to make biodiversity research accessible to all.',
+  alternates: {
+    canonical: '/blog/wildlife-insight-agent',
+  },
+};
+
+<Cover
+  src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?q=80&w=896&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  alt="Wildlife conservation through AI"
+  caption="Unsplash"
+/>
+
+# Wildlife Insight Agent: AI-Powered Conservation Research for Everyone
+
+🐾 Just launched my Wildlife Insight Agent - where AI meets conservation! 🌍
+
+After diving deep into the world of multi-agent AI systems, I'm excited to share my latest project that combines wildlife research with cutting-edge technology.
+
+---
+
+## What It Does
+
+The Wildlife Insight Agent uses 3 specialized AI agents working together via the CrewAI framework to democratize wildlife research:
+
+- **Research Agent**: Fetches real species data from GBIF (Global Biodiversity Information Facility), pulling in millions of global biodiversity records.
+- **Analysis Agent**: Processes the data to uncover biodiversity patterns, conservation insights, and trends like habitat distribution or population changes.
+- **Report Agent**: Generates beginner-friendly conservation reports, making complex findings accessible with clear summaries, visualizations, and actionable recommendations.
+
+Whether you're curious about tigers, whales, elephants, or any custom species, the app makes wildlife research educational and easy for everyone—from students to conservationists.
+
+## The Tech Stack
+
+This project explores a powerful combination of tools for multi-agent AI and data visualization:
+
+- **CrewAI**: Multi-agent orchestration—a game-changer for complex workflows where each agent has a specialized role, just like a real research team.
+- **Gemini LLM**: Google's AI for natural language processing, powering the agents' reasoning and report generation.
+- **Streamlit**: Interactive web interface with real-time progress tracking, allowing users to input species and see agents in action.
+- **GBIF API**: Access to millions of global biodiversity records for accurate, real-world data.
+- **Plotly**: Dynamic data visualizations to illustrate patterns like species distribution maps and trend charts.
+- **Render**: Cloud deployment platform for hosting the app, making it accessible anywhere.
+
+## What I Learned Building This
+
+Building the Wildlife Insight Agent was a deep dive into multi-agent systems and their potential for real-world impact. Key takeaways:
+
+- **Specialized Roles in AI**: The beauty of multi-agent systems is how each AI agent focuses on one task—the Research Agent on data retrieval, the Analysis Agent on pattern detection, and the Report Agent on communication. This mirrors human teams and makes complex problems manageable.
+- **API Integration Challenges**: Working with real-world APIs like GBIF taught me robust error handling (e.g., for rate limits or incomplete data) and the importance of validating inputs to ensure reliable outputs.
+- **User Experience in AI Apps**: Streamlit's real-time updates made the agent workflow engaging, but designing for non-technical users (like conservation enthusiasts) required simplifying outputs without losing depth.
+- **Deployment Insights**: Hosting on Render highlighted scalability issues with LLM calls and API dependencies, emphasizing cost optimization and monitoring for production AI apps.
+- **Ethical Considerations**: In conservation, AI must avoid biases in data (e.g., underrepresentation of certain regions) and promote accurate, actionable insights for good.
+
+The project reinforced that AI isn't just about code—it's about creating tools that empower positive change, like making scientific data accessible for #TechForGood.
+
+## Case Study: Analyzing Tigers
+
+Let's see it in action with Bengal tigers (Panthera tigris tigris):
+
+1. **User Input**: Enter "Bengal tiger" in the Streamlit app.
+2. **Research Agent**: Queries GBIF for occurrence data, retrieving thousands of sightings across Asia.
+3. **Analysis Agent**: Processes the data with Gemini to identify patterns—e.g., habitat hotspots in India and Bangladesh, population trends over decades, and threats like deforestation.
+4. **Report Agent**: Generates a report: "Bengal tigers have declined 93% in the last century, but protected areas show stable populations. Key insight: Expand corridors between reserves to boost genetic diversity." Includes a Plotly map visualizing sightings.
+
+The entire process takes minutes, turning raw data into an educational report anyone can understand and share.
+
+## Challenges and Opportunities
+
+### Challenges
+
+- **Data Quality**: GBIF data is vast but can be noisy (e.g., duplicate entries or outdated records). Robust cleaning and validation were essential.
+- **LLM Hallucinations**: Ensuring agents stick to facts required prompt engineering and cross-verification.
+- **Scalability**: Multi-agent calls can be expensive; optimizing for free tiers while handling diverse species queries.
+- **Accessibility**: Making conservation insights inclusive for non-experts without oversimplifying science.
+
+### Opportunities
+
+- **Broader Impact**: Extend to climate change modeling or endangered species tracking, partnering with NGOs.
+- **Education**: Integrate into classrooms or citizen science apps to engage the public in conservation.
+- **Customization**: Add user-defined agents for specific research needs, like marine biology or urban ecology.
+- **Open Source Collaboration**: The GitHub repo invites contributions to improve agents or add new data sources.
+
+## Conclusion
+
+The Wildlife Insight Agent shows how multi-agent AI can bridge technology and conservation, making global biodiversity data actionable for all. From specialized agents collaborating like a research team to interactive visualizations, this project is a step toward #AI for good. Try it out, explore a species, and join the conversation on ethical AI in environmental science.
+
+Demo: [https://wildlife-insight-agent.onrender.com/](https://wildlife-insight-agent.onrender.com/)
+
+Source Code: [https://github.com/was-abi/wildlife_insight_agent](https://github.com/was-abi/wildlife_insight_agent)
+
+Original LinkedIn Post: [https://lnkd.in/p/dG_Qd6xx](https://lnkd.in/p/dG_Qd6xx)
+
+#AI #MachineLearning #CrewAI #WildlifeConservation #Python #Streamlit #TechForGood #OpenSource
+
+---
+
+## Questions for Reflection
+
+- How can multi-agent AI democratize scientific research beyond conservation?
+- What species would you analyze first, and why?
+- In what ways can tools like this encourage more people to engage with environmental issues?

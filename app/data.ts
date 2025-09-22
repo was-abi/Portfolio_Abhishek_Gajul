@@ -2,7 +2,8 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  video?: string
+  image?: string
   id: string
 }
 
@@ -27,99 +28,154 @@ type SocialLink = {
   link: string
 }
 
+type Book = {
+  title: string
+  author: string
+  cover: string
+  rating: number
+  insight: string
+  link: string
+}
+
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
-    description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    name: 'Claritylog',
+    description: 'A minimalist journaling app for focus and progress.',
+    link: 'https://claritylog.org',
+    image: '/Claritylog[new_logo].png',
     id: 'project1',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    name: 'Wildlife Insight Agent',
+    description: 'AI-powered multi-agent system for wildlife conservation research using CrewAI and GBIF data.',
+    link: 'https://wildlife-insight-agent.onrender.com/',
+    image: 'https://images.unsplash.com/photo-1525382455947-f319bc05fb35?q=80&w=896&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     id: 'project2',
   },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Johnson & Johnson',
+    title: 'AI/ML Developer',
+    start: 'Jan 2025',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: 'https://www.jnj.com',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'Goldman Sachs',
+    title: 'AI & Deep Learning Developer',
+    start: 'Jan 2024',
+    end: 'Dec 2024',
+    link: 'https://www.goldmansachs.com',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
-    id: 'work3',
+    title: 'Kafka on the Shore',
+    author: 'Haruki Murakami',
+    cover: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1429638085i/4929.jpg',
+    rating: 4,
+    insight: 'Murakami\'s surreal blend of mystery, fantasy, and philosophy in a quest for self-discovery.',
+    link: 'https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore',
   },
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
+    title: 'Claritylog: A Calm System for Focus, Insight, and Progress',
+    description: 'Introducing Claritylog, a minimalist journaling app for focus and progress.',
+    link: '/blog/claritylog',
+    uid: 'blog-5',
   },
   {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
+    title: 'Wildlife Insight Agent: AI-Powered Conservation Research for Everyone',
+    description: 'Discover how multi-agent AI is revolutionizing wildlife conservation with CrewAI, Gemini LLM, and GBIF data.',
+    link: '/blog/wildlife-insight-agent',
+    uid: 'blog-6',
+  },
+]
+
+export const BOOKS: Book[] = [
+  {
+    title: 'The Metamorphosis',
+    author: 'Franz Kafka',
+    cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1646444605l/485894._SX50_.jpg',
+    rating: 5,
+    insight: 'A haunting exploration of alienation and transformation in a surreal narrative.',
+    link: 'https://www.goodreads.com/book/show/485894.The_Metamorphosis',
   },
   {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
+    title: 'The Picture of Dorian Gray',
+    author: 'Oscar Wilde',
+    cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546103428l/5297._SY75_.jpg',
+    rating: 5,
+    insight: 'Wilde\'s timeless critique of vanity, morality, and the consequences of eternal youth.',
+    link: 'https://www.goodreads.com/book/show/5297.The_Picture_of_Dorian_Gray',
   },
   {
-    title: 'How to Export Metadata from MDX for Next.js SEO',
-    description: 'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
-    link: '/blog/example-mdx-metadata',
-    uid: 'blog-4',
+    title: 'A Game of Thrones (A Song of Ice and Fire #1)',
+    author: 'George R.R. Martin',
+    cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562726234l/13496._SY75_.jpg',
+    rating: 4,
+    insight: 'Epic political intrigue and world-building in a series that redefines fantasy storytelling.',
+    link: 'https://www.goodreads.com/book/show/13496.A_Game_of_Thrones',
+  },
+  {
+    title: 'The Stranger',
+    author: 'Albert Camus',
+    cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1738704267l/49552._SY75_.jpg',
+    rating: 5,
+    insight: 'A profound examination of absurdity and existential indifference in modern life.',
+    link: 'https://www.goodreads.com/book/show/49552.The_Stranger',
+  },
+  {
+    title: 'Convenience Store Woman',
+    author: 'Sayaka Murata',
+    cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1523623053l/38357895._SY75_.jpg',
+    rating: 5,
+    insight: 'A witty and poignant look at societal norms and personal fulfillment through an unconventional lens.',
+    link: 'https://www.goodreads.com/book/show/38357895-convenience-store-woman',
+  },
+  {
+    title: 'Never Let Me Go',
+    author: 'Kazuo Ishiguro',
+    cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353048590l/6334._SY75_.jpg',
+    rating: 5,
+    insight: 'Ishiguro\'s subtle dystopian tale of love, loss, and humanity in a hauntingly familiar world.',
+    link: 'https://www.goodreads.com/book/show/6334.Never_Let_Me_Go',
+  },
+  {
+    title: 'No Longer Human',
+    author: 'Osamu Dazai',
+    cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1422638843l/194746._SY75_.jpg',
+    rating: 5,
+    insight: 'A raw, introspective journey through despair and the struggle for authenticity.',
+    link: 'https://www.goodreads.com/book/show/194746.No_Longer_Human',
+  },
+  {
+    title: 'Kafka on the Shore',
+    author: 'Haruki Murakami',
+    cover: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1429638085i/4929.jpg',
+    rating: 4,
+    insight: 'Murakami\'s surreal blend of mystery, fantasy, and philosophy in a quest for self-discovery.',
+    link: 'https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
-  },
-  {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://github.com/was-abi',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
+    link: 'https://www.linkedin.com/in/abhishek-gajul/',
   },
   {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    label: 'X',
+    link: 'https://x.com/AbhishekGajul1',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'abhishek.g@mymailshub.com'

@@ -16,6 +16,7 @@ import {
   PROJECTS,
   WORK_EXPERIENCE,
   BLOG_POSTS,
+  BOOKS,
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
@@ -58,7 +59,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
           autoPlay
           loop
           muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
+          className="aspect-square w-full cursor-zoom-in rounded-xl object-cover"
         />
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
@@ -116,7 +117,7 @@ function MagneticSocialLink({
             fill="currentColor"
             fillRule="evenodd"
             clipRule="evenodd"
-          ></path>
+          />
         </svg>
       </a>
     </Magnetic>
@@ -137,38 +138,8 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+            AI/ML Engineer with 5+ years of experience in designing, deploying, and scaling end-to-end machine learning solutions across NLP, Computer Vision, Generative AI (LLMs), and advanced analytics using deep learning and statistical modeling.
           </p>
-        </div>
-      </motion.section>
-
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
-              </div>
-              <div className="px-1">
-                <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={project.link}
-                  target="_blank"
-                >
-                  {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </motion.section>
 
@@ -180,11 +151,11 @@ export default function Personal() {
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
             <a
+              key={job.id}
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
               href={job.link}
               target="_blank"
               rel="noopener noreferrer"
-              key={job.id}
             >
               <Spotlight
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
@@ -206,6 +177,75 @@ export default function Personal() {
                 </div>
               </div>
             </a>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Projects</h3>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {PROJECTS.map((project) => (
+            <div key={project.id} className="space-y-2">
+              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+                {project.image ? (
+                  <MorphingDialog
+                    transition={{
+                      type: 'spring',
+                      bounce: 0,
+                      duration: 0.3,
+                    }}
+                  >
+                    <MorphingDialogTrigger>
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="aspect-square w-full cursor-zoom-in rounded-xl object-cover"
+                      />
+                    </MorphingDialogTrigger>
+                    <MorphingDialogContainer>
+                      <MorphingDialogContent className="relative max-w-4xl rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+                        <img
+                          src={project.image}
+                          alt={project.name}
+                          className="h-[50vh] w-full rounded-xl object-contain md:h-[70vh]"
+                        />
+                      </MorphingDialogContent>
+                      <MorphingDialogClose
+                        className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+                        variants={{
+                          initial: { opacity: 0 },
+                          animate: {
+                            opacity: 1,
+                            transition: { delay: 0.3, duration: 0.1 },
+                          },
+                          exit: { opacity: 0, transition: { duration: 0 } },
+                        }}
+                      >
+                        <XIcon className="h-5 w-5 text-zinc-500" />
+                      </MorphingDialogClose>
+                    </MorphingDialogContainer>
+                  </MorphingDialog>
+                ) : project.video ? (
+                  <ProjectVideo src={project.video} />
+                ) : null}
+              </div>
+              <div className="px-1">
+                <a
+                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+                  href={project.link}
+                  target="_blank"
+                >
+                  {project.name}
+                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
+                </a>
+                <p className="text-base text-zinc-600 dark:text-zinc-400">
+                  {project.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </motion.section>
@@ -250,6 +290,51 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
+        <h3 className="mb-5 text-lg font-medium">Books I've Read</h3>
+        <ul className="space-y-4">
+          {BOOKS.map((book, index) => (
+            <motion.li
+              key={index}
+              variants={VARIANTS_SECTION}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: index * 0.1 }}
+              className="flex gap-4"
+            >
+              <img
+                src={book.cover}
+                alt={`${book.title} cover`}
+                className="aspect-square h-20 w-20 flex-shrink-0 rounded object-cover transition-all"
+              />
+              <div className="flex-1">
+                <a
+                  href={book.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-zinc-900 dark:text-zinc-50 hover:underline"
+                >
+                  {book.title}
+                </a>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">{book.author}</p>
+                <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                  {'★'.repeat(book.rating) + '☆'.repeat(5 - book.rating)}
+                </p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">{book.insight}</p>
+              </div>
+            </motion.li>
+          ))}
+        </ul>
+        <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+          <a href="https://www.goodreads.com/user/show/105856873-abhishek-gajul" target="_blank" rel="noopener noreferrer">
+            View full list on Goodreads →
+          </a>
+        </p>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
         <h3 className="mb-5 text-lg font-medium">Connect</h3>
         <p className="mb-5 text-zinc-600 dark:text-zinc-400">
           Feel free to contact me at{' '}
@@ -263,6 +348,32 @@ export default function Personal() {
               {link.label}
             </MagneticSocialLink>
           ))}
+        </div>
+        <div className="mt-5">
+          <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
+            <a
+              href="/Abhishek_Resume.pdf"
+              download
+              className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+            >
+              Download CV
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3 w-3"
+              >
+                <path
+                  d="M7.5 1C7.77614 1 8 1.22386 8 1.5V8.29289L10.1464 6.14645C10.3417 5.95118 10.6583 5.95118 10.8536 6.14645C11.0488 6.34171 11.0488 6.65829 10.8536 6.85355L7.85355 9.85355C7.75979 9.94732 7.63261 10 7.5 10C7.36739 10 7.24021 9.94732 7.14645 9.85355L4.14645 6.85355C3.95118 6.65829 3.95118 6.34171 4.14645 6.14645C4.34171 5.95118 4.65829 5.95118 4.85355 6.14645L7 8.29289V1.5C7 1.22386 7.22386 1 7.5 1ZM2 10C2 9.72386 2.22386 9.5 2.5 9.5H12.5C12.7761 9.5 13 9.72386 13 10V13C13 13.2761 12.7761 13.5 12.5 13.5H2.5C2.22386 13.5 2 13.2761 2 13V10Z"
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </Magnetic>
         </div>
       </motion.section>
     </motion.main>
