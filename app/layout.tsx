@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim'
+    default: 'AbhiAI Hub',
+    template: '%s | AbhiAI Hub'
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
+  description: 'AI/ML Engineer specializing in NLP, Computer Vision, Generative AI, and design engineering | Portfolio of Abhishek Gajul',
 };
 
 const geist = Geist({
