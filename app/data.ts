@@ -72,12 +72,12 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work2',
   },
   {
-    title: 'Kafka on the Shore',
-    author: 'Haruki Murakami',
-    cover: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1429638085i/4929.jpg',
-    rating: 4,
-    insight: 'Murakami\'s surreal blend of mystery, fantasy, and philosophy in a quest for self-discovery.',
-    link: 'https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore',
+    company: 'Accenture',
+    title: 'Machine Learning Engineer',
+    start: 'Jan 2019',
+    end: 'Jul 2022',
+    link: 'https://www.accenture.com/',
+    id: 'work3',
   },
 ]
 
