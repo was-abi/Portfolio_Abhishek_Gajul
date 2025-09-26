@@ -94,8 +94,13 @@ export const BLOG_POSTS: BlogPost[] = [
     link: '/blog/wildlife-insight-agent',
     uid: 'blog-6',
   },
+  {
+    title: 'Real-Time Adverse Event Detection in EHR: LLM-Powered Pipeline with Gemini 2.5 Flash',
+    description: 'Upgrade a Chip Huyen-inspired pipeline with Gemini 2.5 Flash for ingesting clinical notes, extracting events, and triggering alerts in a production-ready AI system.',
+    link: '/blog/adverse-event-detection-llm',
+    uid: 'blog-7',
+  },
 ]
-
 export const BOOKS: Book[] = [
   {
     title: 'The Metamorphosis',
