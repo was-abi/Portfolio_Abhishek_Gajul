@@ -52,8 +52,14 @@ export const PROJECTS: Project[] = [
     image: 'https://images.unsplash.com/photo-1525382455947-f319bc05fb35?q=80&w=896&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     id: 'project2',
   },
+  {
+    name: 'Adverse Event Detection Pipeline',
+    description: 'Real-time LLM-powered system for detecting adverse events in EHR using Gemini 2.5 Flash.',
+    link: 'https://github.com/was-abi/adverse-event-detection-llm',
+    image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    id: 'project3',
+  },
 ]
-
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Johnson & Johnson',
